@@ -12,7 +12,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 190px;
+  scroll-padding-top: 110px;
 }
 
 body {
@@ -145,7 +145,7 @@ li + li {
   align-items: center;
   justify-content: center;
   gap: 28px;
-  padding: 14px 16px;
+  padding: 12px 16px;
   background: var(--parchment);
   border-bottom: 1px solid var(--ink);
 }
@@ -158,8 +158,8 @@ li + li {
 
 .logo-link {
   flex: 0 0 auto;
-  width: 96px;
-  height: 54px;
+  width: 120px;
+  height: 58px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -168,6 +168,7 @@ li + li {
 .logo-link img {
   width: 100%;
   height: 100%;
+  max-width: none;
   object-fit: contain;
 }
 
@@ -180,10 +181,8 @@ li + li {
   font-weight: 700;
 }
 
-
 .menu-toggle {
   display: none;
-  justify-self: end;
   min-height: 44px;
   padding: 8px 18px;
   color: var(--ink);
@@ -599,20 +598,6 @@ li + li {
 .contact-form-wrap {
   min-width: 0;
 }
-.contact-info {
-  padding-top: 30px;
-  color: var(--parchment);
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.contact-info ul {
-  margin-bottom: 28px;
-}
-
-.contact-info a {
-  color: var(--bordeaux);
-}
 
 .section--dark .role-switcher {
   border-color: var(--parchment);
@@ -625,9 +610,10 @@ li + li {
 .lead-form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 18px 34px;
   padding-top: 30px;
 }
+
 .lead-form .contact-text {
   grid-column: 1 / -1;
   margin-bottom: 0;
@@ -649,12 +635,12 @@ li + li {
 
 .lead-form .contact-email {
   grid-column: 2;
+  align-self: start;
   color: var(--bordeaux);
   font-size: 36px;
   font-weight: 800;
   line-height: 1.1;
 }
-
 
 .lead-form label {
   display: grid;
@@ -735,11 +721,13 @@ li + li {
 }
 
 .footer-logo {
-  width: 100%;
+  width: min(420px, 100%);
 }
 
 .footer-logo img {
   width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .footer-layout p {
@@ -763,7 +751,12 @@ li + li {
   }
 
   .site-header {
-    grid-template-columns: 1fr;
+    justify-content: space-between;
+  }
+
+  .logo-link {
+    width: 150px;
+    height: 70px;
   }
 
   .menu-toggle {
@@ -843,27 +836,36 @@ li + li {
   }
 
   html {
-    scroll-padding-top: 170px;
+    scroll-padding-top: 95px;
   }
 
   .site-header {
-    grid-template-columns: 1fr;
-    justify-items: stretch;
-    gap: 12px;
-    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 16px;
   }
 
   .logo-link {
-  width: 100%;
-  height: auto;
-}
+    flex: 0 0 auto;
+    width: 150px;
+    height: 70px;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
 
-.logo-link img {
-  width: 90%;
-}
+  .logo-link img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: contain;
+  }
 
   .menu-toggle {
-    justify-self: end;
+    flex: 0 0 auto;
+    justify-self: auto;
   }
 
   .site-nav {
@@ -911,6 +913,17 @@ li + li {
     grid-template-columns: 1fr;
   }
 
+  .lead-form .contact-text,
+  .lead-form ul,
+  .lead-form .contact-email {
+    grid-column: 1;
+  }
+
+  .lead-form .contact-email {
+    margin-top: 12px;
+    font-size: 34px;
+  }
+
   .direction-list article {
     min-height: auto;
   }
@@ -925,10 +938,6 @@ li + li {
   }
 
   .footer-logo {
-    width: 100%;
-  }
-
-  .footer-logo img {
-    width: 100%;
+    width: 180px;
   }
 }
