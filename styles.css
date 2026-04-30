@@ -599,6 +599,20 @@ li + li {
 .contact-form-wrap {
   min-width: 0;
 }
+.contact-info {
+  padding-top: 30px;
+  color: var(--parchment);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.contact-info ul {
+  margin-bottom: 28px;
+}
+
+.contact-info a {
+  color: var(--bordeaux);
+}
 
 .section--dark .role-switcher {
   border-color: var(--parchment);
