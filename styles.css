@@ -941,3 +941,114 @@ li + li {
     width: 180px;
   }
 }
+.audience-map-section {
+  border-top: 1px solid var(--ink);
+}
+
+.audience-map {
+  position: relative;
+  overflow: visible;
+  border: 1px solid var(--ink);
+  background: var(--parchment);
+}
+
+.audience-map img {
+  width: 100%;
+  height: auto;
+}
+
+.map-hotspot {
+  position: absolute;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.map-hotspot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 999px;
+}
+
+.map-hotspot:hover::before,
+.map-hotspot:focus::before,
+.map-hotspot:focus-visible::before {
+  border-color: var(--bordeaux);
+}
+
+.map-hotspot span {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 14px);
+  z-index: 5;
+  width: min(360px, 80vw);
+  padding: 18px 20px;
+  background: var(--ink);
+  color: var(--parchment);
+  border: 1px solid var(--bordeaux);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.map-hotspot span strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--bordeaux);
+}
+
+.map-hotspot:hover span,
+.map-hotspot:focus span,
+.map-hotspot:focus-visible span {
+  opacity: 1;
+}
+
+.map-hotspot--business {
+  left: 15%;
+  top: 13%;
+  width: 20%;
+  height: 31%;
+}
+
+.map-hotspot--startup {
+  left: 13%;
+  top: 74%;
+  width: 21%;
+  height: 14%;
+}
+
+.map-hotspot--students {
+  left: 66%;
+  top: 74%;
+  width: 20%;
+  height: 14%;
+}
+
+.map-hotspot--experts {
+  left: 68%;
+  top: 38%;
+  width: 22%;
+  height: 18%;
+}
+
+.map-hotspot--investors {
+  left: 66%;
+  top: 13%;
+  width: 22%;
+  height: 18%;
+}
+
+@media (max-width: 760px) {
+  .map-hotspot span {
+    width: min(300px, 86vw);
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+}
