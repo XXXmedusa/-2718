@@ -171,7 +171,15 @@ li + li {
   object-fit: contain;
 }
 
+  .site-nav {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 30px;
+   font-size: 18px;
+   font-weight: 700;
 
+}
 
 .menu-toggle {
   display: none;
