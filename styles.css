@@ -948,8 +948,7 @@ li + li {
 .audience-map {
   position: relative;
   overflow: visible;
-  border: 1px solid var(--ink);
-  background: var(--parchment);
+  background: transparent;
 }
 
 .audience-map img {
@@ -968,14 +967,8 @@ li + li {
   content: "";
   position: absolute;
   inset: 0;
-  border: 2px solid transparent;
+  border: 0;
   border-radius: 999px;
-}
-
-.map-hotspot:hover::before,
-.map-hotspot:focus::before,
-.map-hotspot:focus-visible::before {
-  border-color: var(--bordeaux);
 }
 
 .map-hotspot span {
