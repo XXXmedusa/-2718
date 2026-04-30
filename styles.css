@@ -158,7 +158,7 @@ li + li {
 
 .logo-link {
   width: 100%;
-  height: clamp(110px, 9.2vw, 154px);
+  height: clamp(80px, 7vw, 120px);
   align-items: center;
   overflow: hidden;
 }
@@ -808,7 +808,7 @@ li + li {
 
   .logo-link {
     width: 100%;
-    height: 112px;
+    height: 80px;
   }
 
   .logo-link img {
