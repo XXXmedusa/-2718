@@ -171,12 +171,14 @@ li + li {
   object-fit: contain;
 }
 
-.site-nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 22px;
-  font-size: 16px;
-}
+174 .site-nav {
+175   display: flex;
+176   justify-content: center;
+177   align-items: center;
+178   gap: 30px;
+179   font-size: 18px;
+180   font-weight: 700;
+181 }
 
 .menu-toggle {
   display: none;
