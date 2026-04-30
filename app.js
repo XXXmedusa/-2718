@@ -1,19 +1,21 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = siteNav.classList.toggle("is-open");
-  document.body.classList.toggle("is-menu-open", isOpen);
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-});
+if (menuToggle && siteNav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = siteNav.classList.toggle("is-open");
+    document.body.classList.toggle("is-menu-open", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
 
-siteNav.addEventListener("click", (event) => {
-  if (event.target.matches("a")) {
-    siteNav.classList.remove("is-open");
-    document.body.classList.remove("is-menu-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  }
-});
+  siteNav.addEventListener("click", (event) => {
+    if (event.target.matches("a")) {
+      siteNav.classList.remove("is-open");
+      document.body.classList.remove("is-menu-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
 
 document.querySelectorAll("[data-audience]").forEach((button) => {
   button.addEventListener("click", () => {
@@ -36,25 +38,41 @@ document.querySelectorAll("[data-audience]").forEach((button) => {
 document.querySelectorAll(".direction-toggle").forEach((button) => {
   button.addEventListener("click", () => {
     const card = button.closest(".direction-card");
+    if (!card) return;
+
     const copy = card.querySelector(".direction-copy");
     const marker = button.querySelector("b");
     const isOpen = card.classList.toggle("is-open");
 
     button.setAttribute("aria-expanded", String(isOpen));
-    copy.setAttribute("aria-hidden", String(!isOpen));
-    marker.textContent = isOpen ? "−" : "+";
+
+    if (copy) {
+      copy.setAttribute("aria-hidden", String(!isOpen));
+    }
+
+    if (marker) {
+      marker.textContent = isOpen ? "−" : "+";
+    }
   });
 });
 
 document.querySelectorAll(".faq-item button").forEach((button) => {
   button.addEventListener("click", () => {
     const item = button.closest(".faq-item");
+    if (!item) return;
+
     const answer = item.querySelector(".faq-answer");
     const marker = button.querySelector("b");
     const isOpen = item.classList.toggle("is-open");
 
-    answer.hidden = !isOpen;
-    marker.textContent = isOpen ? "−" : "+";
+    if (answer) {
+      answer.hidden = !isOpen;
+    }
+
+    if (marker) {
+      marker.textContent = isOpen ? "−" : "+";
+    }
+
     button.setAttribute("aria-expanded", String(isOpen));
   });
 });
@@ -80,8 +98,14 @@ document.querySelectorAll("[data-role]").forEach((button) => {
 document.querySelectorAll(".lead-form").forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+
     const status = document.querySelector(".form-status");
-    status.textContent = "Спасибо. Заявка подготовлена, осталось подключить отправку на нужный email или CRM.";
-    form.reset();
+    if (status) {
+      status.textContent = "Спасибо. Заявка подготовлена, осталось подключить отправку на нужный email или CRM.";
+    }
+
+    if (typeof form.reset === "function") {
+      form.reset();
+    }
   });
 });
