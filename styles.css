@@ -529,7 +529,57 @@ li + li {
   padding-bottom: 24px;
   border-bottom: 1px solid var(--ink);
 }
+.model-comparison {
+  grid-column: 1 / -1;
+  margin-top: 54px;
+}
 
+.model-comparison-title {
+  max-width: 980px;
+  margin: 0 0 32px;
+  color: var(--bordeaux);
+  font-size: clamp(34px, 3.4vw, 56px);
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.model-table-wrap {
+  overflow-x: auto;
+}
+
+.model-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border: 1px solid var(--ink);
+}
+
+.model-table th,
+.model-table td {
+  border: 1px solid var(--ink);
+  padding: 28px 20px;
+  color: var(--ink);
+  font-size: clamp(24px, 2.4vw, 36px);
+  line-height: 1.12;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.model-table th {
+  background: var(--ink);
+  color: var(--parchment);
+  font-weight: 400;
+}
+
+.model-table td:first-child {
+  background: var(--bordeaux);
+  color: var(--parchment);
+}
+
+.model-table td:first-child strong {
+  color: var(--parchment);
+  font-weight: 700;
+}
 .portfolio-section {
   border-top: 1px solid var(--ink);
 }
@@ -822,6 +872,58 @@ li + li {
   }
 }
 
+.model-comparison {
+  grid-column: 1 / -1;
+  margin-top: 54px;
+}
+
+.model-comparison-title {
+  max-width: 980px;
+  margin: 0 0 32px;
+  color: var(--bordeaux);
+  font-size: clamp(34px, 3.4vw, 56px);
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.model-table-wrap {
+  overflow-x: auto;
+}
+
+.model-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border: 1px solid var(--ink);
+}
+
+.model-table th,
+.model-table td {
+  border: 1px solid var(--ink);
+  padding: 28px 20px;
+  color: var(--ink);
+  font-size: clamp(24px, 2.4vw, 36px);
+  line-height: 1.12;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.model-table th {
+  background: var(--ink);
+  color: var(--parchment);
+  font-weight: 400;
+}
+
+.model-table td:first-child {
+  background: var(--bordeaux);
+  color: var(--parchment);
+}
+
+.model-table td:first-child strong {
+  color: var(--parchment);
+  font-weight: 700;
+}
+
 @media (max-width: 760px) {
   body {
     font-size: 16px;
@@ -953,7 +1055,32 @@ li + li {
   .footer-logo {
     width: 180px;
   }
+
+  .model-comparison {
+    margin-top: 36px;
+  }
+
+  .model-comparison-title {
+    margin-bottom: 22px;
+    font-size: 30px;
+  }
+
+  .model-table-wrap {
+    margin: 0 -14px;
+    padding: 0 14px;
+  }
+
+  .model-table {
+    min-width: 720px;
+  }
+
+  .model-table th,
+  .model-table td {
+    padding: 18px 14px;
+    font-size: 20px;
+  }
 }
+
 .audience-map-section {
   border-top: 1px solid var(--ink);
 }
