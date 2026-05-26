@@ -517,10 +517,10 @@ li + li {
 }
 
 .format-block {
-  grid-column: 2;
+  grid-column: 1 / -1;
   display: grid;
   gap: 22px;
-  margin-top: 18px;
+  margin-top: 56px;
   padding-top: 38px;
   border-top: 1px solid var(--ink);
 }
@@ -531,14 +531,15 @@ li + li {
 }
 .model-comparison {
   grid-column: 1 / -1;
-  margin-top: 54px;
+  width: 100%;
+  margin-top: 36px;
 }
 
 .model-comparison-title {
-  max-width: 980px;
-  margin: 0 0 32px;
+  max-width: 1060px;
+  margin: 0 0 28px;
   color: var(--bordeaux);
-  font-size: clamp(34px, 3.4vw, 56px);
+  font-size: clamp(32px, 3vw, 48px);
   line-height: 1.05;
   font-weight: 700;
 }
@@ -557,14 +558,13 @@ li + li {
 .model-table th,
 .model-table td {
   border: 1px solid var(--ink);
-  padding: 28px 20px;
+  padding: 26px 20px;
   color: var(--ink);
-  font-size: clamp(24px, 2.4vw, 36px);
-  line-height: 1.12;
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.15;
   text-align: left;
   vertical-align: middle;
 }
-
 .model-table th {
   background: var(--ink);
   color: var(--parchment);
@@ -900,10 +900,10 @@ li + li {
 .model-table th,
 .model-table td {
   border: 1px solid var(--ink);
-  padding: 28px 20px;
+  padding: 26px 20px;
   color: var(--ink);
-  font-size: clamp(24px, 2.4vw, 36px);
-  line-height: 1.12;
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.15;
   text-align: left;
   vertical-align: middle;
 }
