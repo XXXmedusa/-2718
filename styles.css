@@ -661,6 +661,63 @@ li + li {
 .contact-form-wrap {
   min-width: 0;
 }
+.quick-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.quick-contact__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 13px 24px;
+  color: var(--parchment);
+  border: 1px solid var(--parchment);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.quick-contact__button svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+
+.quick-contact__button:hover,
+.quick-contact__button:focus-visible {
+  color: var(--parchment);
+  background: var(--bordeaux);
+  border-color: var(--bordeaux);
+}
+
+.quick-contact__button--accent {
+  background: var(--bordeaux);
+  border-color: var(--bordeaux);
+  color: var(--parchment);
+}
+
+.quick-contact__button--accent:hover,
+.quick-contact__button--accent:focus-visible {
+  background: var(--parchment);
+  border-color: var(--parchment);
+  color: var(--ink);
+}
+
+@media (max-width: 760px) {
+  .quick-contact {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .quick-contact__button {
+    width: 100%;
+  }
+}
 
 .section--dark .role-switcher {
   border-color: var(--parchment);
