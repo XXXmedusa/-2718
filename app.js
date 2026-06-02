@@ -109,3 +109,58 @@ document.querySelectorAll(".lead-form").forEach((form) => {
     }
   });
 });
+
+
+
+/* ==============================
+  CONTACT LAUNCH BLOCK — START
+  Финальный блок контактов в стиле сайта
+============================== */
+const copyToClipboard = async (text) => {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  textarea.style.top = "-9999px";
+
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+};
+
+document.querySelectorAll("[data-copy-email]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const email = button.dataset.copyEmail;
+    const contactBlock = button.closest(".contact-launch");
+    const status = contactBlock?.querySelector("[data-copy-status]");
+
+    try {
+      await copyToClipboard(email);
+
+      button.classList.add("is-copied");
+
+      if (status) {
+        status.textContent = `Почта скопирована: ${email}`;
+      }
+
+      window.setTimeout(() => {
+        button.classList.remove("is-copied");
+
+        if (status) {
+          status.textContent = "";
+        }
+      }, 2500);
+    } catch (error) {
+      if (status) {
+        status.textContent = `Не удалось скопировать. Почта: ${email}`;
+      }
+    }
+  });
+});
