@@ -1726,3 +1726,34 @@ li + li {
 /* ==============================
   CONTACT LAUNCH BLOCK — END
 ============================== */
+.contact-launch__button {
+  border-radius: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.contact-launch__status {
+  min-height: 30px;
+  max-width: 880px;
+  margin: 18px auto 0;
+  color: var(--bordeaux);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.contact-launch__button.is-copied {
+  color: var(--ink);
+  background: var(--parchment);
+  border-color: var(--parchment);
+}
+
+@media (max-width: 760px) {
+  .contact-launch__status {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+    font-size: 17px;
+  }
+}
