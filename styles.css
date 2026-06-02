@@ -1542,6 +1542,9 @@ li + li {
   CONTACT LAUNCH BLOCK — START
   Финальный блок контактов в стиле сайта
 ============================== */
+/* ==============================
+  CONTACT LAUNCH BLOCK — START
+============================== */
 
 .contact-section {
   border-top: 1px solid var(--parchment);
@@ -1584,68 +1587,66 @@ li + li {
 }
 
 .contact-launch__actions {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  max-width: 860px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  max-width: 760px;
   margin: 0 auto;
-  border-top: 1px solid var(--parchment);
-  border-left: 1px solid var(--parchment);
 }
 
 .contact-launch__button {
-  display: flex;
-  min-height: 92px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  padding: 22px 24px;
+  gap: 14px;
+  min-height: 64px;
+  padding: 0;
   color: var(--parchment);
   background: transparent;
-  border-right: 1px solid var(--parchment);
-  border-bottom: 1px solid var(--parchment);
-  font-size: clamp(24px, 2.5vw, 34px);
+  border: 0;
+  font-size: clamp(26px, 2.6vw, 36px);
   font-weight: 700;
   line-height: 1;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .contact-launch__button:hover,
 .contact-launch__button:focus-visible {
-  color: var(--parchment);
-  background: var(--bordeaux);
-  border-color: var(--bordeaux);
+  color: var(--bordeaux);
+  transform: translateY(-2px);
 }
 
-.contact-launch__button--accent {
+.contact-launch__button--telegram {
   color: var(--parchment);
-  background: var(--bordeaux);
-  border-color: var(--bordeaux);
 }
 
-.contact-launch__button--accent:hover,
-.contact-launch__button--accent:focus-visible {
-  color: var(--ink);
-  background: var(--parchment);
-  border-color: var(--parchment);
+.contact-launch__button--max {
+  color: var(--parchment);
 }
 
 .contact-launch__icon,
 .contact-launch__max {
   display: inline-flex;
-  width: 30px;
-  height: 30px;
-  min-width: 30px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
   align-items: center;
   justify-content: center;
-  flex: 0 0 30px;
+  flex: 0 0 32px;
 }
 
 .contact-launch__icon svg,
 .contact-launch__max svg {
   display: block;
-  width: 30px !important;
-  height: 30px !important;
-  max-width: 30px !important;
-  max-height: 30px !important;
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
 }
 
 .contact-launch__icon svg {
@@ -1704,14 +1705,31 @@ li + li {
   }
 
   .contact-launch__actions {
-    grid-template-columns: 1fr;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 22px;
     max-width: none;
   }
 
   .contact-launch__button {
-    min-height: 76px;
-    justify-content: flex-start;
+    min-height: auto;
     font-size: 24px;
+  }
+
+  .contact-launch__icon,
+  .contact-launch__max {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    flex-basis: 28px;
+  }
+
+  .contact-launch__icon svg,
+  .contact-launch__max svg {
+    width: 28px !important;
+    height: 28px !important;
+    max-width: 28px !important;
+    max-height: 28px !important;
   }
 
   .contact-launch__hint {
@@ -1726,34 +1744,3 @@ li + li {
 /* ==============================
   CONTACT LAUNCH BLOCK — END
 ============================== */
-.contact-launch__button {
-  border-radius: 0;
-  font-family: inherit;
-  cursor: pointer;
-}
-
-.contact-launch__status {
-  min-height: 30px;
-  max-width: 880px;
-  margin: 18px auto 0;
-  color: var(--bordeaux);
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.35;
-  text-align: center;
-}
-
-.contact-launch__button.is-copied {
-  color: var(--ink);
-  background: var(--parchment);
-  border-color: var(--parchment);
-}
-
-@media (max-width: 760px) {
-  .contact-launch__status {
-    margin-left: 0;
-    margin-right: 0;
-    text-align: left;
-    font-size: 17px;
-  }
-}
