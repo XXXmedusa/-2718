@@ -1535,16 +1535,19 @@ li + li {
   SIMPLE CONTACT BLOCK — START
   ВСТАВИТЬ В КОНЕЦ styles.css
 ============================== */
+/* ==============================
+  SIMPLE CONTACT BLOCK — FIXED
+============================== */
 
 .contact-simple {
   display: grid;
-  grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.25fr);
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
   gap: 70px;
   align-items: start;
 }
 
 .contact-simple__copy {
-  max-width: 520px;
+  max-width: 620px;
 }
 
 .contact-simple__kicker {
@@ -1552,149 +1555,116 @@ li + li {
   color: var(--bordeaux);
   font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
-.contact-simple__copy h2 {
+.contact-simple h2 {
   margin-bottom: 26px;
+  color: var(--parchment);
   font-size: clamp(38px, 4vw, 58px);
   line-height: 1;
 }
 
-.contact-simple__copy p:last-child {
-  margin-bottom: 0;
+.contact-simple__copy p {
+  margin-bottom: 20px;
+  color: var(--parchment);
   font-size: 22px;
   line-height: 1.45;
 }
 
-.contact-simple__card {
-  min-width: 0;
-  padding: 34px;
-  border: 1px solid var(--parchment);
+.contact-simple__note {
+  color: var(--parchment);
+  opacity: 0.72;
 }
 
-.contact-simple__top {
-  display: grid;
-  gap: 12px;
-  margin-bottom: 30px;
-}
-
-.contact-simple__label {
-  margin: 0;
-  color: var(--bordeaux);
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.contact-simple__text {
-  max-width: 680px;
-  margin: 0;
-  font-size: 22px;
-  line-height: 1.4;
-}
-
-.contact-actions {
+.contact-simple__actions {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 1px solid var(--parchment);
   border-left: 1px solid var(--parchment);
 }
 
-.contact-action {
-  display: grid;
-  align-content: space-between;
-  min-height: 150px;
-  padding: 24px;
+.contact-simple__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 96px;
+  padding: 20px 18px;
   color: var(--parchment);
   background: transparent;
   border-right: 1px solid var(--parchment);
   border-bottom: 1px solid var(--parchment);
-  transition:
-    color 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.contact-action:hover,
-.contact-action:focus-visible {
+.contact-simple__button:hover,
+.contact-simple__button:focus-visible {
   color: var(--parchment);
   background: var(--bordeaux);
   border-color: var(--bordeaux);
 }
 
-.contact-action--accent {
+/* Главное исправление: принудительно ограничиваем SVG */
+.contact-simple__button svg {
+  display: block;
+  width: 26px !important;
+  height: 26px !important;
+  max-width: 26px !important;
+  max-height: 26px !important;
+  flex: 0 0 26px;
+}
+
+.contact-simple__icon,
+.contact-simple__max {
+  display: inline-flex;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 26px;
+}
+
+.contact-simple__icon svg {
+  fill: currentColor;
+}
+
+.contact-simple__max svg {
+  fill: none;
+}
+
+.contact-simple__button--accent {
   color: var(--parchment);
   background: var(--bordeaux);
   border-color: var(--bordeaux);
 }
 
-.contact-action--accent:hover,
-.contact-action--accent:focus-visible {
+.contact-simple__button--accent:hover,
+.contact-simple__button--accent:focus-visible {
   color: var(--ink);
   background: var(--parchment);
   border-color: var(--parchment);
 }
 
-.contact-action__icon {
-  display: inline-flex;
-  width: 34px;
-  height: 34px;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-action__icon svg {
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
-}
-
-.contact-action__icon--max svg {
-  fill: none;
-}
-
-.contact-action__content {
+.contact-simple__email {
+  grid-column: 2;
   display: grid;
-  gap: 8px;
-}
-
-.contact-action__content strong {
-  font-size: 28px;
-  line-height: 1;
-}
-
-.contact-action__content small {
-  color: currentColor;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.2;
-  opacity: 0.72;
-}
-
-.contact-direct {
-  display: grid;
-  grid-template-columns: minmax(160px, 0.45fr) minmax(0, 1fr);
-  gap: 24px;
-  align-items: end;
-  margin-top: 34px;
-  padding-top: 28px;
+  gap: 14px;
+  margin-top: 30px;
+  padding-top: 26px;
   border-top: 1px solid var(--parchment);
 }
 
-.contact-direct span {
+.contact-simple__email span {
   color: var(--parchment);
   font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  line-height: 1.25;
-  text-transform: uppercase;
-  opacity: 0.8;
+  opacity: 0.72;
 }
 
-.contact-direct a {
+.contact-simple__email a {
   color: var(--bordeaux);
   font-size: clamp(34px, 4vw, 54px);
   font-weight: 700;
@@ -1702,17 +1672,9 @@ li + li {
   overflow-wrap: anywhere;
 }
 
-.contact-direct a:hover,
-.contact-direct a:focus-visible {
+.contact-simple__email a:hover,
+.contact-simple__email a:focus-visible {
   color: var(--parchment);
-}
-
-.contact-simple__hint {
-  margin: 18px 0 0;
-  color: var(--parchment);
-  font-size: 16px;
-  font-weight: 700;
-  opacity: 0.72;
 }
 
 @media (max-width: 1120px) {
@@ -1721,40 +1683,27 @@ li + li {
     gap: 42px;
   }
 
-  .contact-simple__copy {
-    max-width: 760px;
+  .contact-simple__email {
+    grid-column: 1;
   }
 }
 
 @media (max-width: 760px) {
-  .contact-simple__copy p:last-child,
-  .contact-simple__text {
+  .contact-simple__copy p {
     font-size: 18px;
   }
 
-  .contact-simple__card {
-    padding: 22px;
-  }
-
-  .contact-actions {
+  .contact-simple__actions {
     grid-template-columns: 1fr;
   }
 
-  .contact-action {
-    min-height: 116px;
-    padding: 22px;
+  .contact-simple__button {
+    min-height: 76px;
+    justify-content: flex-start;
+    font-size: 22px;
   }
 
-  .contact-direct {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .contact-direct a {
+  .contact-simple__email a {
     font-size: 32px;
   }
 }
-
-/* ==============================
-  SIMPLE CONTACT BLOCK — END
-============================== */
